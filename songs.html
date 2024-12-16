@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Richard Castillo</title>
+  <link rel="stylesheet" href="songs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Richard Castillo</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">Acerca de mí</a>
+      <a href="contact.html">Contáctame</a>
+      <a href="songs.html" class="active">Mis Canciones</a>
+    </nav>
+  </header>
+
+  <!-- Sección principal -->
+  <main>
+    <section class="player-section">
+      <div class="video-player">
+        <iframe 
+          id="video-player" 
+          width="100%" 
+          height="400" 
+          src="https://www.youtube.com/embed/KxSRfRAcoRE" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <ul class="playlist">
+        <li data-src="https://www.youtube.com/embed/KxSRfRAcoRE" class="active">🎵 NADA ME MOVERA </li>
+        <li data-src="https://www.youtube.com/embed/8OSnPGOxM9U" >🎵 CERCA DE TI</li>
+        <li data-src="https://www.youtube.com/embed/xlfKl9a2eBM">🎵 AMOR INMENSO </li>
+        <li data-src="https://www.youtube.com/embed/kQQTnkT9Ibc">🎵 AQUI ESTOY</li>
+        <li data-src="https://www.youtube.com/embed/LA_hffZh_fY">🎵 ERES LA FUENTE</li>
+        <li data-src="https://www.youtube.com/embed/9jA2hBMRYms">🎵 ERES TU MI DIOS</li>
+        <li data-src="https://www.youtube.com/embed/ebUFe_vblng">🎵 GRANDE ERES TU</li>
+        <li data-src="https://www.youtube.com/embed/pR82-30ikiY">🎵 MI AMOR</li>
+        <li data-src="https://www.youtube.com/embed/mc3PdmzdvY4">🎵 RECIBE LA GLORIA</li>
+        <li data-src="https://www.youtube.com/embed/ZWxXl4chZ-k">🎵 SI JESUS ESTA AQUI</li>
+        <li data-src="https://www.youtube.com/embed/G6ipITG052o">🎵 SIN TI NADA SOY</li>
+        <li data-src="https://www.youtube.com/embed/UJPq49xl0gM">🎵 TE ALABARE</li>
+        <li data-src="https://www.youtube.com/embed/yr17Gfew8Bs">🎵 VIVIR EN HERMANDAD</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Sección de Redes Sociales -->
+<section class="social-section" data-aos="fade-in">
+  <h3>Sígueme en mis Redes Sociales</h3>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/profile.php?id=61566203014873&mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="https://www.tiktok.com/@richard_castillo_oficial" target="_blank"><i class="fab fa-tiktok fa-2x"></i></a>
+    <a href="https://www.instagram.com/richard_castilllo/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="https://www.youtube.com/@RichardCastilloMusic/featured" target="_blank"><i class="fab fa-youtube fa-2x"></i></a> <!-- Agregado el ícono de YouTube -->
+  </div>
+</section>
+
+  <footer>
+    <p>© 2024 Richard Castillo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Script para cambiar videos
+    const videoPlayer = document.getElementById('video-player');
+    const playlistItems = document.querySelectorAll('.playlist li');
+
+    playlistItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Cambiar la URL del iframe
+        const src = item.getAttribute('data-src');
+        videoPlayer.src = src;
+
+        // Cambiar la clase activa
+        playlistItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
