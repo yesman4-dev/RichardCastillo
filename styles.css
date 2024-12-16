@@ -7,6 +7,13 @@ body {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden; /* Previene el scroll horizontal */
+  margin: 0; /* Elimina márgenes extra */
+  padding: 0; /* Elimina padding extra */
+  box-sizing: border-box;
+}
+
 header {
   background: #6d0202;
   color: white;
@@ -21,14 +28,10 @@ header {
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 header h1 {
-  font-family: 'Lobster', cursive; /* Cambiamos la fuente */
-  font-size: 3rem; /* Ajustamos el tamaño de la fuente */
-  font-weight: normal; /* No es necesario el bold con esta fuente */
-  color: #ffd700; /* Un color llamativo, como dorado */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Agrega un efecto de sombra para destacar */
-  margin-bottom: 10px;
-  letter-spacing: 1px; /* Ajustamos el espaciado entre letras */
-  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  font-family: 'Lobster', cursive;
+  font-size: 2.2rem; /* Tamaño reducido */
+  margin: 10px 0;
+  color: #ffd700;
 }
 
 nav {
