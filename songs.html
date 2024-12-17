@@ -8,15 +8,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
   <header>
     <h1>Richard Castillo</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">Acerca de mí</a>
-      <a href="contact.html">Contáctame</a>
-      <a href="songs.html" class="active">Mis Canciones</a>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Acerca de mí</a></li>
+        <li><a href="contact.html">Contáctame</a></li>
+        <li><a href="songs.html" class="active">Mis Canciones</a></li>
+      </ul>
     </nav>
   </header>
+  
 
   <!-- Sección principal -->
   <main>
@@ -67,21 +74,33 @@
   </footer>
 
   <script>
-    // Script para cambiar videos
     const videoPlayer = document.getElementById('video-player');
     const playlistItems = document.querySelectorAll('.playlist li');
-
+  
     playlistItems.forEach(item => {
       item.addEventListener('click', () => {
+        // Obtener la URL base del video
+        let src = item.getAttribute('data-src');
+        
+        // Agregar el parámetro autoplay=1
+        if (!src.includes('autoplay=1')) {
+          src += src.includes('?') ? '&autoplay=1' : '?autoplay=1';
+        }
+  
         // Cambiar la URL del iframe
-        const src = item.getAttribute('data-src');
         videoPlayer.src = src;
-
+  
         // Cambiar la clase activa
         playlistItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
       });
     });
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('show');
+    }
   </script>
+  
 </body>
 </html>

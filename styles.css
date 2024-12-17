@@ -63,6 +63,14 @@ nav a:hover {
     margin: 10px 0; /* Espaciado vertical en dispositivos pequeños */
     font-size: 1.5rem; /* Aumentar el tamaño de los enlaces en móviles */
   }
+
+  .hero {
+    height: auto; /* Ajuste para dispositivos móviles */
+  }
+
+  .carousel {
+    margin-top: 10px; /* Ajuste del espacio superior si es necesario */
+  }
 }
 
 
@@ -85,16 +93,36 @@ nav a:hover {
   overflow: hidden;
 }
 
-.hero-images {
-  display: flex;
-  transition: transform 1.5s ease-in-out;
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Desplaza el ancho de las imágenes duplicadas */
+  }
 }
 
-.hero-images img {
-  width: 100%; /* Asegura que cada imagen ocupe todo el ancho del contenedor */
-  height: 100%; /* Asegura que cada imagen ocupe toda la altura del contenedor */
-  object-fit: contain; /* Hace que la imagen se ajuste completamente, sin recortarse */
+.hero {
+  position: relative;
+  width: 200%;
+  height: 70vh; /* Ajusta la altura visible */
+  overflow: hidden; /* Oculta el contenido que se desplace fuera del área visible */
 }
+
+.hero-images {
+  display: flex;
+  animation: slide 35s linear infinite; /* Animación más lenta */
+  width: calc(20% * 14); /* Duplicamos las imágenes, así que son 7 x 2 */
+}
+
+
+.hero-images img {
+  min-width: calc(100% / 7); /* Cada imagen ocupa una fracción del total */
+  height: auto; /* Ajusta la altura proporcionalmente */
+  object-fit: cover; /* Evita el zoom excesivo */
+}
+
+
 
 section {
   padding: 50px 20px;
@@ -521,3 +549,99 @@ footer {
   height: 450px;
 }
 
+
+
+/* Estilos generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #070707;
+  color: #fff;
+  text-align: center;
+}
+
+header {
+  background: #6d0202;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #f39c12;
+}
+
+header h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 2.2rem;
+  margin: 10px 0;
+  color: #ffd700;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffcc00;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #6d0202;
+    border-top: 1px solid #f39c12;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}

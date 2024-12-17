@@ -21,13 +21,19 @@
 
 </head>
 <body>
+
   <header>
     <h1>Richard Castillo</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">Acerca de mí</a>
-      <a href="contact.html">Contáctame</a>
-      <a href="songs.html">Mis Canciones</a>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Acerca de mí</a></li>
+        <li><a href="contact.html">Contáctame</a></li>
+        <li><a href="songs.html" class="active">Mis Canciones</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -95,28 +101,27 @@
     <div class="mosaic-item">
       <img src="recursos/momento1.jpg" alt="Momento 1">
       <div class="overlay">
-        <p>Pianista: Juan Pérez en un evento inolvidable</p>
       </div>
     </div>
 
     <div class="mosaic-item">
       <img src="recursos/momento2.jpg" alt="Momento 2">
       <div class="overlay">
-        <p>Concierto al aire libre - 2024</p>
+        <p></p>
       </div>
     </div>
 
     <div class="mosaic-item">
       <img src="recursos/momento3.jpg" alt="Momento 3">
       <div class="overlay">
-        <p>Celebración de fe con la comunidad</p>
+        <p></p>
       </div>
     </div>
 
     <div class="mosaic-item">
       <img src="recursos/momento4.jpg" alt="Momento 4">
       <div class="overlay">
-        <p>Detrás de cámaras en el estudio</p>
+        <p></p>
       </div>
     </div>
   </div>
@@ -173,8 +178,13 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
   <script>
     AOS.init();
+      function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+  }
   </script>
 </body>
 </html>

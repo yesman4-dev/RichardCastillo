@@ -64,6 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('show');
+}
 
 
 
