@@ -238,3 +238,71 @@ nav {
     display: flex;
   }
 }
+
+
+/* Sección de Karaoke */
+.karaoke-section {
+  padding: 30px 20px;
+  background-color: #0d0d0d;
+  text-align: center;
+}
+
+.karaoke-section h2 {
+  font-size: 2.5rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.karaoke-section p {
+  font-size: 1.2rem;
+
+  margin-bottom: 30px;
+}
+
+.karaoke-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.karaoke-item {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  text-align: center;
+}
+
+.karaoke-item video {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #ffd700;
+  border-radius: 10px 10px 0 0;
+}
+
+.karaoke-item p {
+  font-size: 1rem;
+  padding: 10px;
+
+  background-color: #6d0202;
+  margin: 0;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .karaoke-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .karaoke-item {
+    max-width: 100%;
+  }
+
+  .karaoke-item video {
+    height: auto;
+  }
+}

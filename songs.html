@@ -56,7 +56,41 @@
         <li data-src="https://www.youtube.com/embed/yr17Gfew8Bs">🎵 VIVIR EN HERMANDAD</li>
       </ul>
     </section>
+
+      <!-- Nueva sección de karaoke -->
+      <section class="karaoke-section">
+        <h2>🎤 Karaoke 🎶</h2>
+        <p>Disfruta de mis pistas de karaoke y canta junto a la música. ¡Pronto habrá más!</p>
+        <div class="karaoke-gallery">
+          <div class="karaoke-item">
+            <video controls>
+              <source src="recursos//video1.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+            <p>🎵 Karaoke 1: Te alabaré</p>
+          </div>
+          <div class="karaoke-item">
+            <video controls>
+              <source src="recursos/video2.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+            <p>🎵 Karaoke 2: Vivir en hermandad</p>
+          </div>
+          <div class="karaoke-item">
+            <video controls>
+              <source src="recursos/video3.mp4" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+            <p>🎵 Karaoke 3: Sin ti nada soy</p>
+          </div>
+        </div>
+      </section>
+
+
+
   </main>
+
+ 
 
   <!-- Sección de Redes Sociales -->
 <section class="social-section" data-aos="fade-in">
@@ -101,6 +135,54 @@
       navLinks.classList.toggle('show');
     }
   </script>
+
+<style>
+  .karaoke-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    color: #0c0c0c;
+  }
+
+  .karaoke-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .karaoke-section p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+
+  .karaoke-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .karaoke-item {
+    flex: 1 1 300px;
+    max-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  .karaoke-item iframe {
+    width: 100%;
+    height: 200px;
+  }
+
+  .karaoke-item p {
+    font-size: 1em;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+  }
+</style>
   
 </body>
 </html>
